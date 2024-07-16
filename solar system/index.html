@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>solar system</title>
+</head>
+
+<body>
+    <h1 class="logo">
+        Calculate the weight of an object on different planets
+        <span>Input your weight in Kilograms or Pounds and Select a planet of your choice
+            <div id="message" style="color: white"></div>
+        </span>
+    </h1>
+    <input id="user-weight" type="number" />
+    <input class="planet9" id="pluto" value="Pluto" name="planet" type="radio" />
+    <label class="pluto menu" for="pluto">
+        <div class="preview"></div>
+        <div class="info">
+            <h2>Pluto</h2>
+            <h3>0.06 AU</h3>
+        </div>
+    </label>
+    <input class="planet8" id="neptune" value="Neptune" name="planet" type="radio" />
+    <label class="neptune menu" for="neptune">
+        <div class="preview"></div>
+        <div class="info">
+            <h2>Neptune</h2>
+            <h3>1.19 AU</h3>
+        </div>
+    </label>
+    <input class="planet7" id="uranus" value="Uranus" name="planet" type="radio" />
+    <label class="uranus menu" for="uranus">
+        <div class="preview"></div>
+        <div class="info">
+            <h2>Uranus</h2>
+            <h3>0.92 AU</h3>
+        </div>
+    </label>
+    <input class="planet6" id="saturn" value="Saturn" name="planet" type="radio" />
+    <label class="saturn menu" for="saturn">
+        <div class="preview"></div>
+        <div class="info">
+            <h2>Saturn</h2>
+            <h3>1.06 AU</h3>
+        </div>
+    </label>
+    <input class="planet5" id="jupiter" value="Jupiter" name="planet" type="radio" />
+    <label class="jupiter menu" for="jupiter">
+        <div class="preview"></div>
+        <div class="info">
+            <h2>Jupiter</h2>
+            <h3>2.34 AU</h3>
+        </div>
+    </label>
+    <input class="planet4" id="mars" value="Mars" name="planet" type="radio" />
+    <label class="menu mars" for="mars">
+        <div class="preview"></div>
+        <div class="info">
+            <h2>Mars</h2>
+            <h3>0.38 AU</h3>
+        </div>
+    </label>
+    <input checked="checked" class="planet3" id="earth" value="Earth" name="planet" type="radio" />
+    <label class="menu earth" for="earth">
+        <div class="preview"></div>
+        <div class="info">
+            <h2>Earth</h2>
+            <h3>1 AU</h3>
+        </div>
+    </label>
+    <input class="planet2" id="venus" value="Venus" name="planet" type="radio" />
+    <label class="menu venus" for="venus">
+        <div class="preview"></div>
+        <div class="info">
+            <h2>Venus</h2>
+            <h3>0.91 AU</h3>
+        </div>
+    </label>
+    <input class="planet1" id="mercury" value="Mercury" name="planet" type="radio" />
+    <label class="menu mercury" for="mercury">
+        <div class="preview"></div>
+        <div class="info">
+            <h2>Mercury</h2>
+            <h3>0.38 AU</h3>
+        </div>
+    </label>
+
+    <div class="solar">
+        <div class="solar_systm">
+            <div class="planet mercury">
+                <div class="planet_description mercury">
+                    <h2>quicksilver</h2>
+                    <h1>Mercury</h1>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet venus">
+                <div class="planet_description venus">
+                    <h2>Phosphorus</h2>
+                    <h1>Venus</h1>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet earth">
+                <div class="planet_description earth">
+                    <h2>The world</h2>
+                    <h1>Earth</h1>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet mars">
+                <div class="planet_description mars">
+                    <h2>the Red Planet</h2>
+                    <h1>Mars</h1>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+        <div class="solar_systm">
+            <div class="planet jupiter">
+                <div class="planet_description jupiter">
+                    <h2>the Gas Giant</h2>
+                    <h1>Jupiter</h1>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet saturn">
+                <div class="planet_description saturn">
+                    <h2>The Ringed Planet</h2>
+                    <h1>Saturn</h1>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet uranus">
+                <div class="planet_description uranus">
+                    <h2>bulls-eye planet</h2>
+                    <h1>Uranus</h1>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet neptune">
+                <div class="planet_description neptune">
+                    <h2>the Blue Giant</h2>
+                    <h1>Neptune</h1>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="solar_systm">
+            <div class="planet pluto">
+                <div class="planet_description pluto">
+                    <h2>Dwarf Planet</h2>
+                    <h1>Pluto</h1>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h6>AU = Astronomical unit</h6>
+            </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>

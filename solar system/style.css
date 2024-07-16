@@ -1,0 +1,2057 @@
+.solar_systm {
+    transform-style: preserve-3d;
+    pointer-events: none;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#user-weight {
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 100px;
+    font-size: large;
+    font-weight: bold;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label.venus>.info h3 {
+    color: #b45d15;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label.earth>.info h3 {
+    color: #26daaa;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label.mars>.info h3 {
+    color: #e55f45;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label.jupiter>.info h3 {
+    color: orange;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label.saturn>.info h3 {
+    color: #b29d81;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label.uranus>.info h3 {
+    color: #8dcdd8;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label.neptune>.info h3 {
+    color: #4f83e2;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label.pluto>.info h3 {
+    color: #ff8732;
+}
+
+@-webkit-keyframes planet {
+    from {
+        background-position-y: 0px;
+    }
+
+    to {
+        background-position-y: -1000px;
+    }
+}
+
+@keyframes planet {
+    from {
+        background-position-y: 0px;
+    }
+
+    to {
+        background-position-y: -1000px;
+    }
+}
+
+body {
+    overflow: hidden;
+    background: black;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+}
+
+body .logo {
+    color: white;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 4px;
+    font-style: italic;
+}
+
+body .logo span {
+    font-size: 16px;
+    color: #f39041;
+    display: block;
+}
+
+body label {
+    cursor: pointer;
+}
+
+body label.mercury>.preview {
+    background: url("./Assests/Image/mercury.png") !important;
+}
+
+body label.venus>.preview {
+    background: url("./Assests/Image/venus.png") !important;
+}
+
+body label.earth>.preview {
+    background: url("./Assests/Image/earth.png") !important;
+}
+
+body label.mars>.preview {
+    background: url("./Assests/Image/mars.png") !important;
+}
+
+body label.jupiter>.preview {
+    background: url("./Assests/Image/jupiter.png") !important;
+}
+
+body label.saturn>.preview {
+    background: url("./Assests/Image/saturn.png") !important;
+}
+
+body label.uranus>.preview {
+    background: url("./Assests/Image/uranus.png") !important;
+}
+
+body label.neptune>.preview {
+    background: url("./Assests/Image/neptune.png") !important;
+}
+
+body label.pluto>.preview {
+    background: url("./Assests/Image/pluto.png") !important;
+}
+
+body .solar_systm .planet,
+body input[type="radio"][name="planet"]::after,
+body .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+}
+
+body .solar_systm .planet {
+    height: 1200px;
+    width: 1200px;
+    border-radius: 600px;
+    background: red;
+    transition: transform 2.8s 0.23s cubic-bezier(0.33, 0, 0, 1), opacity 2s 0.8s,
+        box-shadow 0s 0s;
+    background-size: 1140px 910px !important;
+    top: auto;
+    bottom: -920px;
+}
+
+body .solar {
+    position: absolute;
+    transform: rotatex(-20deg);
+    perspective: 800px;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+body input[type="radio"][name="planet"]::after {
+    width: 220px;
+    height: 220px;
+    border-radius: 550px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 12;
+    left: 18px;
+    bottom: 282px;
+}
+
+body label.menu {
+    color: white;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    left: 20px;
+    z-index: 2;
+}
+
+body label.menu:after {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid white;
+    border-radius: 60px;
+    content: "";
+    z-index: 2;
+    position: absolute;
+    top: -4px;
+    left: -6px;
+}
+
+body label.menu .preview {
+    width: 30px;
+    height: 30px;
+    background: yellow;
+    float: left;
+    background-size: auto 100% !important;
+    position: absolute;
+    border-radius: 100px;
+    box-shadow: 0 -13px 10px 2px black inset;
+}
+
+body label.menu .info {
+    position: relative;
+    left: 50px;
+    top: 1px;
+}
+
+body label.menu h2,
+body label.menu h3 {
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+body label.menu h2 {
+    font-size: 11px;
+    opacity: 0.4;
+    margin-bottom: 4px;
+}
+
+body label.menu h3 {
+    font-size: 8px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    opacity: 0.3;
+}
+
+body label.menu:nth-of-type(1) {
+    top: calc(50vh + 100px + ((14px + 34px) * 1) + 0px - 369px);
+}
+
+body label.menu:nth-of-type(2) {
+    top: calc(50vh + 100px + ((14px + 34px) * 2) + 0px - 369px);
+}
+
+body label.menu:nth-of-type(3) {
+    top: calc(50vh + 100px + ((14px + 34px) * 3) + 0px - 369px);
+}
+
+body label.menu:nth-of-type(4) {
+    top: calc(50vh + 100px + ((14px + 34px) * 4) + 0px - 369px);
+}
+
+body label.menu:nth-of-type(5) {
+    top: calc(50vh + 100px + ((14px + 34px) * 5) + 0px - 369px);
+}
+
+body label.menu:nth-of-type(6) {
+    top: calc(50vh + 100px + ((14px + 34px) * 6) + 0px - 369px);
+}
+
+body label.menu:nth-of-type(7) {
+    top: calc(50vh + 100px + ((14px + 34px) * 7) + 0px - 369px);
+}
+
+body label.menu:nth-of-type(8) {
+    top: calc(50vh + 100px + ((14px + 34px) * 8) + 0px - 369px);
+}
+
+body label.menu:nth-of-type(9) {
+    top: calc(50vh + 100px + ((14px + 34px) * 9) + 0px - 369px);
+}
+
+body .overlay {
+    border-bottom: 1020px solid black;
+    width: 1800px;
+    height: 620px;
+    top: auto;
+    transform: none;
+    top: -240px;
+    left: -303px;
+    opacity: 1;
+    border-radius: 100%;
+    z-index: 0;
+    box-shadow: 0px -190px 215px 110px black inset;
+}
+
+body input[type="radio"][name="planet"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body input[type="radio"][name="planet"]::after {
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet1:checked::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(1) {
+    pointer-events: all;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 2;
+    -webkit-animation: planet 60s 3.9s infinite linear;
+    animation: planet 60s 3.9s infinite linear;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(1) .planet_description {
+    opacity: 1;
+    transition: all 0.6s 2.6s;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(1) .planet_description h2,
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(1) .planet_description h1 {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s 3s;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(1) .planet .overlay {
+    opacity: 1;
+    top: -240px;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(-2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(-4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 0;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(-6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -1;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(-9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -2;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(-11500px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -3;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(-13800px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -4;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(-16100px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -5;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(-18400px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -6;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label+div .solar_systm:nth-of-type(10) .planet {
+    transform: translateZ(-20700px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -7;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label.mercury>.info h3 {
+    color: #e8927c;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label:before {
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    background: white;
+    border-radius: 4px;
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label>.info h2 {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet1:checked+label>.info h3 {
+    opacity: 1;
+    color: #fea082;
+}
+
+body input[type="radio"][name="planet"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body input[type="radio"][name="planet"]::after {
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet2:checked::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(2) {
+    pointer-events: all;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 3;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 2;
+    -webkit-animation: planet 60s 3.9s infinite linear;
+    animation: planet 60s 3.9s infinite linear;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(2) .planet_description {
+    opacity: 1;
+    transition: all 0.6s 2.6s;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(2) .planet_description h2,
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(2) .planet_description h1 {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s 3s;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(2) .planet .overlay {
+    opacity: 1;
+    top: -240px;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(-2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(-4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 0;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(-6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -1;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(-9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -2;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(-11500px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -3;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(-13800px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -4;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(-16100px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -5;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label+input+label+div .solar_systm:nth-of-type(10) .planet {
+    transform: translateZ(-18400px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -6;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label.mercury>.info h3 {
+    color: #e8927c;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label.venus>.info h3 {
+    color: #b45d15;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label.earth>.info h3 {
+    color: #26daaa;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label.mars>.info h3 {
+    color: #e55f45;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label.jupiter>.info h3 {
+    color: orange;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label.saturn>.info h3 {
+    color: #b29d81;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label.uranus>.info h3 {
+    color: #8dcdd8;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label.neptune>.info h3 {
+    color: #4f83e2;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label.pluto>.info h3 {
+    color: #ff8732;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label:before {
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    background: white;
+    border-radius: 4px;
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label>.info h2 {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet2:checked+label>.info h3 {
+    opacity: 1;
+    color: #fea082;
+}
+
+body input[type="radio"][name="planet"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body input[type="radio"][name="planet"]::after {
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet3:checked::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(3) {
+    pointer-events: all;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 4;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 3;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 2;
+    -webkit-animation: planet 60s 3.9s infinite linear;
+    animation: planet 60s 3.9s infinite linear;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet_description {
+    opacity: 1;
+    transition: all 0.6s 2.6s;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet_description h2,
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet_description h1 {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s 3s;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet .overlay {
+    opacity: 1;
+    top: -240px;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(-2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(-4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 0;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(-6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -1;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(-9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -2;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(-11500px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -3;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(-13800px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -4;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label.mercury>.info h3 {
+    color: #e8927c;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label.venus>.info h3 {
+    color: #b45d15;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label.earth>.info h3 {
+    color: #26daaa;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label.mars>.info h3 {
+    color: #e55f45;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label.jupiter>.info h3 {
+    color: orange;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label.saturn>.info h3 {
+    color: #b29d81;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label.uranus>.info h3 {
+    color: #8dcdd8;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label.neptune>.info h3 {
+    color: #4f83e2;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label.pluto>.info h3 {
+    color: #ff8732;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label:before {
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    background: white;
+    border-radius: 4px;
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label>.info h2 {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet3:checked+label>.info h3 {
+    opacity: 1;
+    color: #fea082;
+}
+
+body input[type="radio"][name="planet"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body input[type="radio"][name="planet"]::after {
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet4:checked::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) {
+    pointer-events: all;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 5;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 4;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 3;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 2;
+    -webkit-animation: planet 60s 3.9s infinite linear;
+    animation: planet 60s 3.9s infinite linear;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet_description {
+    opacity: 1;
+    transition: all 0.6s 2.6s;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet_description h2,
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet_description h1 {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s 3s;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet .overlay {
+    opacity: 1;
+    top: -240px;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(-2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(-4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 0;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(-6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -1;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(-9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -2;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(-11500px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -3;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label.mercury>.info h3 {
+    color: #e8927c;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label.venus>.info h3 {
+    color: #b45d15;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label.earth>.info h3 {
+    color: #26daaa;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label.mars>.info h3 {
+    color: #e55f45;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label.jupiter>.info h3 {
+    color: orange;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label.saturn>.info h3 {
+    color: #b29d81;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label.uranus>.info h3 {
+    color: #8dcdd8;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label.neptune>.info h3 {
+    color: #4f83e2;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label.pluto>.info h3 {
+    color: #ff8732;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label:before {
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    background: white;
+    border-radius: 4px;
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label>.info h2 {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet4:checked+label>.info h3 {
+    opacity: 1;
+    color: #fea082;
+}
+
+body input[type="radio"][name="planet"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body input[type="radio"][name="planet"]::after {
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet5:checked::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) {
+    pointer-events: all;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 6;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 5;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 4;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 3;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 2;
+    -webkit-animation: planet 60s 3.9s infinite linear;
+    animation: planet 60s 3.9s infinite linear;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet_description {
+    opacity: 1;
+    transition: all 0.6s 2.6s;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet_description h2,
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet_description h1 {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s 3s;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet .overlay {
+    opacity: 1;
+    top: -240px;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(-2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(-4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 0;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(-6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -1;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(-9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -2;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label.mercury>.info h3 {
+    color: #e8927c;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label.venus>.info h3 {
+    color: #b45d15;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label.earth>.info h3 {
+    color: #26daaa;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label.mars>.info h3 {
+    color: #e55f45;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label.jupiter>.info h3 {
+    color: orange;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label.saturn>.info h3 {
+    color: #b29d81;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label.uranus>.info h3 {
+    color: #8dcdd8;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label.neptune>.info h3 {
+    color: #4f83e2;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label.pluto>.info h3 {
+    color: #ff8732;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label:before {
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    background: white;
+    border-radius: 4px;
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label>.info h2 {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet5:checked+label>.info h3 {
+    opacity: 1;
+    color: #fea082;
+}
+
+body input[type="radio"][name="planet"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body input[type="radio"][name="planet"]::after {
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet6:checked::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) {
+    pointer-events: all;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(11500px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 7;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 6;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 5;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 4;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 3;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 2;
+    -webkit-animation: planet 60s 3.9s infinite linear;
+    animation: planet 60s 3.9s infinite linear;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet_description {
+    opacity: 1;
+    transition: all 0.6s 2.6s;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet_description h2,
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet_description h1 {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s 3s;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet .overlay {
+    opacity: 1;
+    top: -240px;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(-2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(-4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 0;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(-6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: -1;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label.mercury>.info h3 {
+    color: #e8927c;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label.venus>.info h3 {
+    color: #b45d15;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label.earth>.info h3 {
+    color: #26daaa;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label.mars>.info h3 {
+    color: #e55f45;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label.jupiter>.info h3 {
+    color: orange;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label.saturn>.info h3 {
+    color: #b29d81;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label.uranus>.info h3 {
+    color: #8dcdd8;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label.neptune>.info h3 {
+    color: #4f83e2;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label.pluto>.info h3 {
+    color: #ff8732;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label:before {
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    background: white;
+    border-radius: 4px;
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label>.info h2 {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet6:checked+label>.info h3 {
+    opacity: 1;
+    color: #fea082;
+}
+
+body input[type="radio"][name="planet"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body input[type="radio"][name="planet"]::after {
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet7:checked::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) {
+    pointer-events: all;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(13800px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 8;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(11500px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 7;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 6;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 5;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 4;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 3;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 2;
+    -webkit-animation: planet 60s 3.9s infinite linear;
+    animation: planet 60s 3.9s infinite linear;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet_description {
+    opacity: 1;
+    transition: all 0.6s 2.6s;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet_description h2,
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet_description h1 {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s 3s;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet .overlay {
+    opacity: 1;
+    top: -240px;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(-2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(-4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 0;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label.mercury>.info h3 {
+    color: #e8927c;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label.venus>.info h3 {
+    color: #b45d15;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label.earth>.info h3 {
+    color: #26daaa;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label.mars>.info h3 {
+    color: #e55f45;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label.jupiter>.info h3 {
+    color: orange;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label.saturn>.info h3 {
+    color: #b29d81;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label.uranus>.info h3 {
+    color: #8dcdd8;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label.neptune>.info h3 {
+    color: #4f83e2;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label.pluto>.info h3 {
+    color: #ff8732;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label:before {
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    background: white;
+    border-radius: 4px;
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label>.info h2 {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet7:checked+label>.info h3 {
+    opacity: 1;
+    color: #fea082;
+}
+
+body input[type="radio"][name="planet"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body input[type="radio"][name="planet"]::after {
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet8:checked::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) {
+    pointer-events: all;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(16100px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 9;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(13800px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 8;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(11500px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 7;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 6;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 5;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 4;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 3;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 2;
+    -webkit-animation: planet 60s 3.9s infinite linear;
+    animation: planet 60s 3.9s infinite linear;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet_description {
+    opacity: 1;
+    transition: all 0.6s 2.6s;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet_description h2,
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet_description h1 {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s 3s;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet .overlay {
+    opacity: 1;
+    top: -240px;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(-2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label.mercury>.info h3 {
+    color: #e8927c;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label.venus>.info h3 {
+    color: #b45d15;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label.earth>.info h3 {
+    color: #26daaa;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label.mars>.info h3 {
+    color: #e55f45;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label.jupiter>.info h3 {
+    color: orange;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label.saturn>.info h3 {
+    color: #b29d81;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label.uranus>.info h3 {
+    color: #8dcdd8;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label.neptune>.info h3 {
+    color: #4f83e2;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label.pluto>.info h3 {
+    color: #ff8732;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label:before {
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    background: white;
+    border-radius: 4px;
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label>.info h2 {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet8:checked+label>.info h3 {
+    opacity: 1;
+    color: #fea082;
+}
+
+body input[type="radio"][name="planet"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body input[type="radio"][name="planet"]::after {
+    content: "";
+}
+
+body input[type="radio"][name="planet"].planet9:checked::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input::after {
+    display: none;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) {
+    pointer-events: all;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(18400px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 10;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(16100px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 9;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(13800px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 8;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(11500px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 7;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(9200px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 6;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(6900px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 5;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(4600px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 4;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(2300px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 3;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scaleX(0.89);
+    opacity: 2;
+    -webkit-animation: planet 60s 3.9s infinite linear;
+    animation: planet 60s 3.9s infinite linear;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet_description {
+    opacity: 1;
+    transition: all 0.6s 2.6s;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet_description h2,
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet_description h1 {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s 3s;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+input+label+div .solar_systm:nth-of-type(9) .planet .overlay {
+    opacity: 1;
+    top: -240px;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label.mercury>.info h3 {
+    color: #e8927c;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label.venus>.info h3 {
+    color: #b45d15;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label.earth>.info h3 {
+    color: #26daaa;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label.mars>.info h3 {
+    color: #e55f45;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label.jupiter>.info h3 {
+    color: orange;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label.saturn>.info h3 {
+    color: #b29d81;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label.uranus>.info h3 {
+    color: #8dcdd8;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label.neptune>.info h3 {
+    color: #4f83e2;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label.pluto>.info h3 {
+    color: #ff8732;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label:before {
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    background: white;
+    border-radius: 4px;
+    content: "";
+
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label>.info h2 {
+    opacity: 1;
+}
+
+body input[type="radio"][name="planet"].planet9:checked+label>.info h3 {
+    opacity: 1;
+    color: #fea082;
+}
+
+body .solar_systm:nth-of-type(1) .planet {
+    transform: translateZ(0px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: 2;
+}
+
+body .solar_systm:nth-of-type(1) .planet_description {
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(1) .planet_description h1,
+body .solar_systm:nth-of-type(1) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm:nth-of-type(2) .planet {
+    transform: translateZ(-2300px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(2) .planet_description {
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(2) .planet_description h1,
+body .solar_systm:nth-of-type(2) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm:nth-of-type(3) .planet {
+    transform: translateZ(-4600px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: 0;
+}
+
+body .solar_systm:nth-of-type(3) .planet_description {
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(3) .planet_description h1,
+body .solar_systm:nth-of-type(3) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(-6900px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: -1;
+}
+
+body .solar_systm:nth-of-type(4) .planet_description {
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(4) .planet_description h1,
+body .solar_systm:nth-of-type(4) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm:nth-of-type(5) .planet {
+    transform: translateZ(-9200px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: -2;
+}
+
+body .solar_systm:nth-of-type(5) .planet_description {
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(5) .planet_description h1,
+body .solar_systm:nth-of-type(5) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm:nth-of-type(6) .planet {
+    transform: translateZ(-11500px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: -3;
+}
+
+body .solar_systm:nth-of-type(6) .planet_description {
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(6) .planet_description h1,
+body .solar_systm:nth-of-type(6) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm:nth-of-type(7) .planet {
+    transform: translateZ(-13800px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: -4;
+}
+
+body .solar_systm:nth-of-type(7) .planet_description {
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(7) .planet_description h1,
+body .solar_systm:nth-of-type(7) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm:nth-of-type(8) .planet {
+    transform: translateZ(-16100px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: -5;
+}
+
+body .solar_systm:nth-of-type(8) .planet_description h1,
+body .solar_systm:nth-of-type(8) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm:nth-of-type(9) .planet {
+    transform: translateZ(-18400px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: -6;
+}
+
+body .solar_systm:nth-of-type(9) .planet_description {
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(9) .planet_description h1,
+body .solar_systm:nth-of-type(9) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm:nth-of-type(10) .planet {
+    transform: translateZ(-20700px) translateY(0) rotatex(4deg) scalex(0.89);
+    opacity: -7;
+}
+
+body .solar_systm:nth-of-type(10) .planet_description {
+    opacity: 1;
+}
+
+body .solar_systm:nth-of-type(10) .planet_description h1,
+body .solar_systm:nth-of-type(10) .planet_description h2 {
+    position: relative;
+    top: -330px;
+    transition: all 0.5s 0s;
+}
+
+body .solar_systm .planet.mercury {
+    background: url("./Assests/Image/mercury.png");
+    box-shadow: 0 -590px 150px black inset,
+        0 0px 130px 40px rgba(234, 205, 199, 0.6) inset,
+        0 0px 23px 4px rgba(234, 205, 199, 0.6) inset,
+        0 -10px 130px rgba(188, 143, 127, 0.6);
+}
+
+body .solar_systm .planet.venus {
+    background: url("./Assests/Image/venus.png");
+    box-shadow: 0 -590px 150px black inset, 0 0px 130px 40px #ffcb9c inset,
+        0 0px 23px 4px #ffcb9c inset, 0 -10px 130px #b85a07;
+}
+
+body .solar_systm .planet.earth {
+    background: url("./Assests/Image/earth.png");
+    box-shadow: 0 -590px 150px black inset, 0 0px 130px 40px #8cbaff inset,
+        0 0px 23px 4px #8cbaff inset, 0 -10px 130px #7894a9;
+}
+
+body .solar_systm .planet.earth .trajectory.m {
+    width: 1500px;
+    height: 1500px;
+    left: -150px;
+    top: -110px;
+}
+
+body .solar_systm .planet.mars {
+    background: url("./Assests/Image/mars.png");
+    box-shadow: 0 -590px 150px black inset, 0 0px 130px 40px #e86363 inset,
+        0 0px 23px 4px #e86363 inset, 0 -10px 130px #6b261a;
+}
+
+body .solar_systm .planet.jupiter {
+    background: url("./Assests/Image/jupiter.png");
+    box-shadow: 0 -590px 150px black inset,
+        0 0px 130px 40px rgba(234, 205, 199, 0.6) inset,
+        0 0px 23px 4px rgba(234, 205, 199, 0.6) inset,
+        0 -10px 130px rgba(188, 143, 127, 0.6);
+}
+
+body .solar_systm .planet.saturn {
+    background: url("./Assests/Image/saturn.png");
+    box-shadow: 0 -590px 150px black inset,
+        0 0px 130px 40px rgba(234, 205, 199, 0.6) inset,
+        0 0px 23px 4px rgba(234, 205, 199, 0.6) inset,
+        0 -10px 130px rgba(188, 143, 127, 0.6);
+}
+
+body .solar_systm .planet.uranus {
+    background: url("./Assests/Image/uranus.png");
+    box-shadow: 0 -590px 150px black inset,
+        0 0px 130px 40px rgba(234, 205, 199, 0.6) inset,
+        0 0px 23px 4px rgba(234, 205, 199, 0.6) inset,
+        0 -10px 130px rgba(127, 188, 171, 0.6);
+}
+
+body .solar_systm .planet.neptune {
+    background: url("./Assests/Image/neptune.png");
+    box-shadow: 0 -590px 150px black inset,
+        0 0px 130px 40px rgba(234, 205, 199, 0.6) inset,
+        0 0px 23px 4px rgba(234, 205, 199, 0.6) inset, 0 -10px 130px #2d4153;
+}
+
+body .solar_systm .planet.pluto {
+    background: url("./Assests/Image/pluto.png");
+    box-shadow: 0 -590px 150px black inset,
+        0 0px 130px 40px rgba(234, 205, 199, 0.6) inset,
+        0 0px 23px 4px rgba(234, 205, 199, 0.6) inset, 0 -10px 130px #2d4153;
+}
+
+body .solar_systm .planet_description {
+    width: 620px;
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    z-index: 2;
+    right: 0;
+    color: white;
+    font-style: italic;
+    text-transform: capitalize;
+    transition: all 0.4s 0s;
+    z-index: 1;
+}
+
+body .solar_systm .planet_description.mercury h2 {
+    color: #f7dad3;
+}
+
+body .solar_systm .planet_description.venus h2 {
+    color: #e99046;
+}
+
+body .solar_systm .planet_description.earth h2 {
+    color: #7de9cc;
+}
+
+body .solar_systm .planet_description.mars h2 {
+    color: #f2ac9e;
+}
+
+body .solar_systm .planet_description.jupiter h2 {
+    color: #ffc966;
+}
+
+body .solar_systm .planet_description.saturn h2 {
+    color: #d9cec0;
+}
+
+body .solar_systm .planet_description.uranus h2 {
+    color: #d9eef2;
+}
+
+body .solar_systm .planet_description.neptune h2 {
+    color: #a7c1f0;
+}
+
+body .solar_systm .planet_description.pluto h2 {
+    color: #ffc398;
+}
+
+body .solar_systm .planet_description h1,
+body .solar_systm .planet_description h2,
+body .solar_systm,
+body .solar_systm {
+    font-weight: 100;
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+body .solar_systm .planet_description h1 {
+    letter-spacing: 16px;
+    font-size: 34px;
+}
+
+body .solar_systm .planet_description h2 {
+    margin-top: 60px;
+    margin-bottom: 6px;
+}
+body .footer{
+    color: #ffffff;
+    font-style: italic;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    position: fixed;     
+    text-align:left;    
+    bottom: 0px; 
+    left:20px;
+    width: 100%;
+}
